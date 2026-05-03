@@ -1,0 +1,100 @@
+{
+  "root": "IEMOCAP_full_release",
+  "split_rule": {
+    "train": [
+      1,
+      2,
+      3
+    ],
+    "valid": [
+      4
+    ],
+    "test": [
+      5
+    ]
+  },
+  "num_labels_parsed": 10039,
+  "missing_label_by_split": {},
+  "stats": {
+    "all": {
+      "num_wav": 10039,
+      "total_seconds": 44774.72406250017,
+      "total_hours": 12.437423350694493,
+      "total_hms": "12:26:15",
+      "label_distribution": {
+        "ang": 1103,
+        "dis": 2,
+        "exc": 1041,
+        "fea": 40,
+        "fru": 1849,
+        "hap": 595,
+        "neu": 1708,
+        "oth": 3,
+        "sad": 1084,
+        "sur": 107,
+        "xxx": 2507
+      }
+    },
+    "train": {
+      "num_wav": 5766,
+      "total_seconds": 25990.224500000015,
+      "total_hours": 7.21950680555556,
+      "total_hms": "07:13:10",
+      "label_distribution": {
+        "ang": 606,
+        "dis": 2,
+        "exc": 504,
+        "fea": 23,
+        "fru": 987,
+        "hap": 387,
+        "neu": 1066,
+        "oth": 2,
+        "sad": 696,
+        "sur": 70,
+        "xxx": 1423
+      }
+    },
+    "valid": {
+      "num_wav": 2103,
+      "total_seconds": 9280.661250000014,
+      "total_hours": 2.5779614583333372,
+      "total_hms": "02:34:41",
+      "label_distribution": {
+        "ang": 327,
+        "exc": 238,
+        "fea": 7,
+        "fru": 481,
+        "hap": 65,
+        "neu": 258,
+        "oth": 1,
+        "sad": 143,
+        "sur": 19,
+        "xxx": 564
+      }
+    },
+    "test": {
+      "num_wav": 2170,
+      "total_seconds": 9503.8383125,
+      "total_hours": 2.6399550868055557,
+      "total_hms": "02:38:24",
+      "label_distribution": {
+        "ang": 170,
+        "exc": 299,
+        "fea": 10,
+        "fru": 381,
+        "hap": 143,
+        "neu": 384,
+        "sad": 245,
+        "sur": 18,
+        "xxx": 520
+      }
+    },
+    "unknown": {
+      "num_wav": 0,
+      "total_seconds": 0.0,
+      "total_hours": 0.0,
+      "total_hms": "00:00:00",
+      "label_distribution": {}
+    }
+  }
+}
