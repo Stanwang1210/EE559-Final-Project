@@ -1,0 +1,12 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+torch==2.7.0
+torchvision==0.22.0
+torchaudio==2.7.0
+pyyaml
+h5py
+librosa
+matplotlib
+numpy
+tqdm
+transformers
