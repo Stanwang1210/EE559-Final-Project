@@ -1,0 +1,10 @@
+batch_size: 256
+epochs: 50
+lr: 1e-5
+weight_decay: 1e-5
+num_workers: 8
+seed: 42
+weight_decay: 1e-5
+model_type: cnn
+step_updates: 1
+hidden_dim: 256

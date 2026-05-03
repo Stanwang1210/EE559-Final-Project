@@ -24,21 +24,17 @@ from utils import (
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Train simple mean-time-axis classifier"
-    )
+    parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", type=Path, default=Path("preprocessed"))
     parser.add_argument(
         "--h5",
         type=Path,
         default=Path("preprocessed/iemocap_melspec.h5"),
-        help="Path to iemocap_melspec.h5",
     )
     parser.add_argument(
         "--labels-csv",
         type=Path,
         default=Path("preprocessed/iemocap_labels.csv"),
-        help="Path to iemocap_labels.csv",
     )
     parser.add_argument(
         "--device", type=str, default="cuda:1" if torch.cuda.is_available() else "cpu"
@@ -47,7 +43,6 @@ def parse_args() -> argparse.Namespace:
         "--config",
         type=Path,
         default=Path("configs/mel_nn.yaml"),
-        help="Path to YAML config file",
     )
     parser.add_argument("--save-dir", type=Path, default=Path("checkpoints"))
     parser.add_argument("--seed", type=int, default=42)
@@ -176,17 +171,13 @@ def main() -> None:
         num_workers,
     )
 
-    h5_path = args.h5 
+    h5_path = args.h5
     labels_csv = (
         args.labels_csv
         if args.labels_csv is not None
         else args.data_dir / "iemocap_labels.csv"
     )
 
-    if not h5_path.exists():
-        raise FileNotFoundError(f"HDF5 file not found: {h5_path}")
-    if not labels_csv.exists():
-        raise FileNotFoundError(f"Labels CSV not found: {labels_csv}")
     logger.info("Using HDF5: %s", h5_path)
     logger.info("Using labels CSV: %s", labels_csv)
 
@@ -237,7 +228,7 @@ def main() -> None:
         model = MeanTimeClassifier(
             n_mels=n_mels, hidden_dim=hidden_dim, num_classes=num_classes
         ).to(device)
-        
+
     logger.info("Model initialized: %s", model)
     total_params = sum(p.numel() for p in model.parameters()) / 1024**2
     logger.info("Total parameters: %.2f MB", total_params)
